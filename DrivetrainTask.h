@@ -6,7 +6,7 @@
 
 // Locations (0-9 on remote are saved locations)
 extern int locations[10][2] = {{0, 0},
-                               {3, 7},
+                               {2, 3},
                                {9, 4},
                                {5, 2},
                                {1, 8},
@@ -16,12 +16,15 @@ extern int locations[10][2] = {{0, 0},
                                {4, 6},
                                {7, 5}};
 int currloc[2] = {0, 0};
+double currlocprec[2] = {0, 0};
 int destloc[2] = {0, 0};
 int targetloc[2] = {0, 0};
+double direction = 0;
 
 // map of environment
-// 0 = empty, >0 = obstacle with a life of #, -1 = permanent obstacle
-byte fieldMap[20][20] = {0};
+// 0 = empty, >0 = path calculation, -1 = obstacle
+const int fieldsize = 10;
+byte fieldMap[fieldsize][fieldsize] = {0};
 
 // Motor Stuff
 const int L1 = 12;

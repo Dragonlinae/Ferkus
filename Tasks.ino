@@ -24,14 +24,8 @@ void executeTasks(int currtime) {
 // addTask(myTask);
 
 void addTasks() {
-  IRState irState = IR_INIT;
-  task irTask = {100, 100, &irState, tickIR};
   addTask(irTask);
-  UltraState ultraState = ULTRA_INIT;
-  task pingTask = {20, 20, &ultraState, tickUltra};
   addTask(pingTask);
-  DriveState driveState = DRIVE_INIT;
-  task driveTask = {100, 100, &driveState, tickDrive};
   addTask(driveTask);
 }
 
